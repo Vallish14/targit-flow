@@ -17,6 +17,11 @@ def home():
 
 @app.route("/account", methods=["POST", "GET"])
 def account():
+    usr = "<User Not Defined>" 
+    if (request.method == "POST"): 
+        usr = request.form["name"] 
+        if not usr: 
+            usr = "<User Not Defined>"
     return render_template("account.html",username=usr) 
 
 if __name__ == "__main__": 
