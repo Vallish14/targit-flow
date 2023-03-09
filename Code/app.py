@@ -15,5 +15,9 @@ def home():
         return false 
     return render_template(asset)
 
+@app.route("/account", methods=["POST", "GET"])
+def account():
+    return render_template("account.html",username=usr) 
+
 if __name__ == "__main__": 
     app.run(debug=True,port=4949) #running flask (Initalised on line 4)
